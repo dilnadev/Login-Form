@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# Login Form
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application featuring a toggle-based Login and Sign Up form UI.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## What This App Does
 
-### `npm start`
+This is a simple **authentication UI** built with React. It displays a centered card on the screen with two tabs — **Login** and **SignUp** — that the user can switch between. The app does not connect to a backend; it is a front-end UI demonstration.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Login Form
+When the **Login** tab is active, the user sees:
+- An **Email** input field
+- A **Password** input field
+- A **Forgot Password** link
+- A **Login** button
+- A prompt saying *"Not a Member? Signup Now"* — clicking it switches to the SignUp form
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### SignUp Form
+When the **SignUp** tab is active, the user sees:
+- An **Email** input field
+- A **Password** input field
+- A **Confirm Password** input field
+- A **Signup** button
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How It Works
 
-### `npm run build`
+### State Management
+The component uses a single piece of React state:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```js
+const [isLogin, setIsLogin] = useState(true);
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `isLogin = true` → Login form is shown
+- `isLogin = false` → SignUp form is shown
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clicking the toggle buttons or the "Signup Now" link updates this state, and React re-renders the correct form.
 
-### `npm run eject`
+### Component Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+App.js
+ └── LoginForm.js      ← all form logic lives here
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **`App.js`** is the root component. It simply renders `<LoginForm />`.
+- **`LoginForm.js`** contains the toggle buttons and both forms, rendered conditionally using a ternary (`isLogin ? <LoginForm> : <SignUpForm>`).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Styling
+All styles are in **`App.css`**:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Element | Style |
+|---|---|
+| Page background | Solid blue (`#0C67A0`), fullscreen, centered |
+| Form card | White background, rounded corners, subtle box shadow, 300px wide |
+| Toggle buttons | Side-by-side, rounded top corners; active tab turns dark navy (`#033452`) |
+| Inputs | Full-width, padded, light border, rounded |
+| Submit button | Dark navy background, white text, rounded |
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+├── App.js            # Root component — renders LoginForm
+├── App.css           # All styles for the app
+├── LoginForm.js      # Login/SignUp toggle component (main logic)
+└── index.js          # Entry point — mounts App into the DOM
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Getting Started
 
-### Analyzing the Bundle Size
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Node.js (v14 or higher)
+- npm
 
-### Making a Progressive Web App
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm install
+```
 
-### Advanced Configuration
+### Running the App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm start
+```
 
-### Deployment
+Opens at [http://localhost:3000](http://localhost:3000) in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Build for Production
 
-### `npm run build` fails to minify
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Run Tests
+
+```bash
+npm test
+```
+
+---
+
+## Built With
+
+- [React](https://reactjs.org/) v19
+- [Create React App](https://create-react-app.dev/)

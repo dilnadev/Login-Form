@@ -49,18 +49,6 @@ App.js
 - **`App.js`** is the root component. It simply renders `<LoginForm />`.
 - **`LoginForm.js`** contains the toggle buttons and both forms, rendered conditionally using a ternary (`isLogin ? <LoginForm> : <SignUpForm>`).
 
-### Styling
-All styles are in **`App.css`**:
-
-| Element | Style |
-|---|---|
-| Page background | Solid blue (`#0C67A0`), fullscreen, centered |
-| Form card | White background, rounded corners, subtle box shadow, 300px wide |
-| Toggle buttons | Side-by-side, rounded top corners; active tab turns dark navy (`#033452`) |
-| Inputs | Full-width, padded, light border, rounded |
-| Submit button | Dark navy background, white text, rounded |
-
----
 
 ## Project Structure
 
@@ -72,40 +60,7 @@ src/
 └── index.js          # Entry point — mounts App into the DOM
 ```
 
----
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm
-
-### Installation
-
-```bash
-npm install
-```
-
-### Running the App
-
-```bash
-npm start
-```
-
-Opens at [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-### Run Tests
-
-```bash
-npm test
-```
 
 ---
 

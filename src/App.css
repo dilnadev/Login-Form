@@ -77,6 +77,17 @@ body {
   text-align: right;
 }
 
+.link-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 10px;
+  text-align: right;
+  font-size: 14px;
+}
+
 .form p {
   text-align: center;
 }

@@ -26,12 +26,12 @@ const LoginForm = () => {
               <h2>Login Form</h2>
               <input type="email" placeholder="Email" />
               <input type="password" placeholder="Password" />
-              <a href="#">Forgot Password</a>
+              <button type="button" className="link-btn" onClick={() => {}}>Forgot Password</button>
               <button>Login</button>
               <p> Not a Member?{" "}
-                <a href="#" onClick={() => setIsLogin(false)}>
+                <button type="button" className="link-btn" onClick={() => setIsLogin(false)}>
                   Signup Now
-                </a>
+                </button>
               </p>
             </div>
           </>
